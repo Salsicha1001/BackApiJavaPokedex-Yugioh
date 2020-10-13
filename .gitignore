@@ -32,5 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 .
-.bancoFirebase.json
-/Firebase
+src/resources/static/bancoFirebase.json/
+src/resources/java/Firebase/
+
