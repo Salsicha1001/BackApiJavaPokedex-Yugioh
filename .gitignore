@@ -33,5 +33,6 @@ build/
 .vscode/
 .
 src/resources/static/bancoFirebase.json/
-src/resources/java/Firebase/
+src/resources/java/Firebase/git commit --amend --reset-author
+
 
