@@ -28,7 +28,7 @@ public class FireInit {
 
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                .setDatabaseUrl("https://bancospringangular.firebaseio.com")
+                .setDatabaseUrl("##################################")
                 .build();
 
         FirebaseApp.initializeApp(options);
