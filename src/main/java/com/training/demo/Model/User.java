@@ -1,6 +1,7 @@
 package com.training.demo.Model;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class User  {
     private String uid;
@@ -15,8 +16,7 @@ public class User  {
     public User() {
     }
 
-
-    public User(String uid,String firstName, String lastName, long cpf, String birthday, String email, String password, String type) {
+    public User(String uid, String firstName, String lastName, long cpf, String birthday, String email, String password, String type) {
         this.uid = uid;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -26,7 +26,6 @@ public class User  {
         this.password = password;
         this.type = type;
     }
-
     public String getUid() {
         return uid;
     }
@@ -92,13 +91,41 @@ public class User  {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return cpf == user.cpf &&
+                Objects.equals(uid, user.uid) &&
+                Objects.equals(firstName, user.firstName) &&
+                Objects.equals(lastName, user.lastName) &&
+                Objects.equals(birthday, user.birthday) &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(password, user.password) &&
+                Objects.equals(type, user.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(uid, firstName, lastName, cpf, birthday, email, password, type);
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "User{" +
+                "uid='" + uid + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", cpf=" + cpf +
+                ", birthday='" + birthday + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }
